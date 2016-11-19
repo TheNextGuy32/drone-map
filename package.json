@@ -1,0 +1,12 @@
+{
+  "name": "drone-map",
+  "version": "0.0.0",
+  "description": "drone-map",
+  "main": "./src/app.js",
+  "author": "Oliver and TJ",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "path": "^0.12.7"
+  }
+}
