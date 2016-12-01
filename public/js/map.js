@@ -6,9 +6,10 @@ window.onload = function() {
       console.log("Error getting data.");
     }
   });
+//  drawChart();
 };
 
-function map(data) {  
+function map(data) {
   console.dir(data);
 
   var large = new google.maps.Map(document.getElementById('large-map'), {
