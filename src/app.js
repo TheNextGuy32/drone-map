@@ -8,6 +8,17 @@ app.use(express.static(path.resolve(`${__dirname}/../public`)));
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(`${__dirname}/../public/index.html`));
 });
+app.get('/maps', (req, res) => {
+  res.sendFile(path.resolve(`${__dirname}/../public/index.html`));
+});
+
+app.get('/graphs', (req, res) => {
+  res.sendFile(path.resolve(`${__dirname}/../public/graphs.html`));
+});
+
+app.get('/documentation', (req, res) => {
+  res.sendFile(path.resolve(`${__dirname}/../public/documentation.html`));
+});
 
 app.get('/data', (req,res) => {
 
