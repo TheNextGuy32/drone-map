@@ -37,5 +37,39 @@
      </div><!--/.nav-collapse -->
    </div>
  </nav>
+ <div class = "container">
+<div class = "page-header">
+  <h1>Drone Strikes in Pakistan from 2009 to 2013 <small>Oliver Barnum and T.J. Tarazevits</small></h1>
+</div>
+<h1>Overview and Motivation</h1>
+<div>This project is designed to showcase the rise to prominence of unmanned aerial vehicles (UAVs or Drones) in warfare, specifically in underreported or low profile conflicts. Our main goal was to take the publically available data from the CIA reports and present it in a visually engaging way. The main issue we see with this new form of warfare is the detachment Americans feel towards these operations. Soldiers sitting in air conditioned offices presses buttons that kill people thousands of miles away do not represent the traditional war hero. The grainy black and white images of successful strikes, taken by the same vehicles have a remote sterility to them. This visualization is designed to place these impactful events on the map, giving anyone the opportunity to learn where in the world these strikes occur, and as they dive deeper, learn about the damage to military and civilian populations in these far flung regions.</div>
+<h1>Related Work</h1>
+<p>The notes for class gave an example visualization by Pitch Interactive, titled ‘Out of Sight, Out of Mind’. This highly polished narrative visualization is designed to give each life lost to a drone strike significance, and the entire project is meant to illicit an emotional response that can be channeled to encourage users to educate themselves. We decided to avoid the individual narrative angle, and instead focus on the local costs of these strikes. Each map maker showcases all of the damage, from military and high value targets, to civilian and infrastructure caught in the crossfire. Our goal was to showcase the collateral damage caused by this new form of warfare..</p>
+<h1>Questions</h1>
+<p>We set out to answer several questions with this project. How many lives were affected by this aerial campaign? What was the loss of life and property over this 4 year span? How precise are these tactical strikes really?</p>
+<p>Our initial assumptions were challenged once we started combing through the data. We initially believed that these strikes were a seldom used tool by the CIA specifically targeting high value targets in terrorist organizations. We actually found massive numbers of strikes against a variety of targets. President Obama has overseen a huge increase in the number of these strikes ordered against these targets.</p>
+<p>When we looked at the data, we found that the minimum and maximum estimated casualties actually varied quite widely. This defies the assumption that such strikes are precise and accurate. Analyzing the data also opened our eyes to the scale of damage caused by these strikes in just 4 years. The program has been active since before 2006 and is still in use today.</p>
+<h1>Data</h1>
+<p>Our primary data source is the information released by CIA regarding its own strikes. This report contains many different data points for each recorded strike. These include date, time of day, tribal agency, a local name for the location, precise latitude and longitude, and the time of day. Each strike also has casualty estimates that include minimum and maximum reported killed and injured with civilians and children broken out separately. Each strike also has the number of missiles used with a minimum and maximum given.</p>
+<p>The data was given as a CSV file. This file was uploaded to our visualization and processed locally with client side logic. Cleanup was minimal as this was pre-formatted data from a government agency.</p>
+<h1>Exploratory Data Analysis</h1>
+<p>Our initial visualization goal was to put the strikes by location onto a map of the region. This was visually interesting but not as compelling as we hoped. We decided to evolve our map rendering with different approaches. We moved from generic markers to colorful descriptive markers representing different forms of strikes. This allows a high level overview of what kind of casualties and damage are occurring throughout the region. The use of different contrasting hues and different shapes for the marks allows for the user to preprocess much of the data.</p>
+<p>Also we found that satellite maps provided a compelling new dimension to our data set. The GPS coordinates provided a precise enough to pinpoint the actual structures, compounds, and villages targeted by these strikes. This allowed us to place our markers sometimes over the rubble of these strikes.</p>
+<h1>Design Evolution</h1>
+<p>Our first iteration of the visualization was a simple map. This highlighted the region of interest and showed the position of the strikes we plotted on the map. However, we were reliant on the built in google map controls, which were not immediately intuitive to the user and did not convey all the data we wanted.</p>
+<p>Our next iteration used multiple map windows. This provided a regional overview, showing all of the strikes involved in the conflict. The second pane highlighted a specific city in the region, showing the density of strikes in urban areas. Finally we had a close up pane that showed how specific stretches of road or a single village had been affected by multiple strikes over time. We also used Google Maps built in satellite terrain to add more detail to the close up view, while the regional map view showed the concentration of strikes along regional borders.</p>
+<h1>Implementation</h1>
+<p>The current implementation relies on Google’s visualization technologies. The primary visualization component are the Google Maps API elements. These flexible but powerful tools gave us everything we needed to make compelling visualizations for our project.</p>
+<p>Our graphing was powered by Google Charts. We loaded the data via csv and piped it into the chart engines to create our visualizations. Google Charts allowed for beautiful, customizable charts with interactivity.</p>
+<h1>Evaluation</h1>
+<p>In mapping the drone data to the maps of Pakistan we chose four categories in order of precedence: collateral, deadly, emplacement, and military. A collateral strike is one which has a positive number of civilian or non-adult casualties. A deadly strike is one whose kill count is above twenty. An emplacement strike is one which destroyed more than three buildings. Any strike which does not meet any of these categories is considered the standard military strike. The larger majority of the strikes are collateral ones, even with the US government lenient military identification standards. Each of age male is considered a military target unless overwhelming evidence proves otherwise. It was found that <a href = "https://en.wikipedia.org/wiki/Drone_strikes_in_Pakistan">‘approximately 13% of deaths being the intended targets, 81% being other militants, and 6% being civilians.’, </a>and the extent of this indiscriminate bombardment is what we would like to show. </p>
+<p>We combined all drone strikes which had extremely similar (within 0.005 coordinates) coordinates in order to reduce map clutter. We are trying to impart an overall picture of the effectiveness of the Drone War, so the date of the strikes that hit the same place don’t matter as much.</p>
+</div>
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Drone Maps</p>
+        <p class="text-muted">Oliver Barnum and T.J. Tarazevits</p>
+      </div>
+    </footer>
 </body>
 </html>
