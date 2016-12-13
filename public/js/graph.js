@@ -13,7 +13,9 @@ const drawChart = () => {
         hAxis: {title: data.getColumnLabel(0)},
         vAxis: {title: data.getColumnLabel(21), minValue: data.getColumnRange(21).min, maxValue: data.getColumnRange(21).max},
         legend: { position: "none" },
-        }
+        colors: ['#7F282F'],
+        title: 'Casualties per strike',
+      }
     let chart = new google.charts.Bar(document.getElementById('warGraph'));
     chart.draw(view, google.charts.Bar.convertOptions(options));
   });
@@ -31,6 +33,8 @@ const drawChart = () => {
         hAxis: {title: data.getColumnLabel(0)},
         vAxis: {title: data.getColumnLabel(1), minValue: data.getColumnRange(1).min, maxValue: data.getColumnRange(1).max},
         legend: { position: "none" },
+        colors: ['#7F282F'],
+        title: 'Time of Day per Strike',
       };
     let chart = new google.charts.Bar(document.getElementById('timeOfDay'));
     chart.draw(view, google.charts.Bar.convertOptions(options));
@@ -50,6 +54,8 @@ const drawChart = () => {
         hAxis: {title: data.getColumnLabel(0)},
         vAxis: {title: data.getColumnLabel(1), minValue: data.getColumnRange(1).min, maxValue: data.getColumnRange(1).max},
         legend: { position: "none" },
+        colors: ['#7F282F'],
+        title: 'Strikes per Distinct Location',
         }
     let chart = new google.charts.Bar(document.getElementById('strikesPerLocation'));
     chart.draw(view, google.charts.Bar.convertOptions(options));
@@ -69,6 +75,8 @@ const drawChart = () => {
         hAxis: {title: data.getColumnLabel(0)},
         vAxis: {title: data.getColumnLabel(1), minValue: data.getColumnRange(1).min, maxValue: data.getColumnRange(1).max},
         legend: { position: "none" },
+        colors: ['#7F282F'],
+        title: 'Strikes per Tribal Region',
         }
     let chart = new google.charts.Bar(document.getElementById('tribalRegion'));
     chart.draw(view, google.charts.Bar.convertOptions(options));
@@ -80,3 +88,5 @@ const drawChart = () => {
 google.charts.load('current', {'packages':['bar']});
 google.charts.setOnLoadCallback(drawChart);
 // window.onload = drawChart;
+
+window.onresize = drawChart;
